@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="74px" height="75px" viewBox="0 0 74 75" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>scroll down</title>
+    <g id="Footer" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="MadeoV5-1300px-footer1" transform="translate(-1147.000000, -118.000000)" stroke="#FFF99F" stroke-width="4">
+            <g id="footer/4">
+                <g id="footer">
+                    <g id="insta-link" transform="translate(80.000000, 100.000000)">
+                        <g id="scroll-down" transform="translate(1103.500000, 55.000000) rotate(-315.000000) translate(-1103.500000, -55.000000) translate(1078.000000, 29.000000)">
+                            <line x1="25.4168406" y1="57.9574881" x2="25.4168406" y2="-5.68536905" id="Line-2" stroke-linecap="square" transform="translate(25.416841, 26.136060) rotate(-315.000000) translate(-25.416841, -26.136060) "></line>
+                            <polyline id="Path" points="2.81298636 2.37339154 49.4844149 2.37339154 49.4844149 49.0448201"></polyline>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

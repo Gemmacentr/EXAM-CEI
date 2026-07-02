@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Great+Vibes&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gemma Centrone- Portoflio</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="script/js.js" defer></script>
+  </head>
+  <body>
+    <div class="Cursor"></div>
+    <div id="Loader">
+      <div class="Loader-test">Loading <span id="counter">0</span>%</div>
+
+      <div class="Loader-progress-wrapper">
+        <div class="Loader-progress-bar" id="progressBar"></div>
+      </div>
+      <div id="text"></div>
+    </div>
+    <div id="site-content">
+      <header>
+        <nav class="Nav">
+          <div class="Nav-logo"><span>Gemma /></span></div>
+          <ul class="Nav-list">
+            <li class="Nav-items"><a href="#studies">Studies</a></li>
+            <li class="Nav-items"><a href="#projects">Projects</a></li>
+            <li class="Nav-items"><a href="#passions">Passions</a></li>
+            <li class="Nav-items"><a href="#contacts">Contacts</a></li>
+          </ul>
+          <div class="Nav-hamburger">
+            <button
+              class="Navigation-trigger"
+              aria-label="navigation trigger"
+            ></button>
+          </div>
+        </nav>
+      </header>
+      <header>
+        <nav class="Second-nav">
+          <ul class="Nav-list">
+            <li class="Nav-items"><a href="">Studies</a></li>
+            <li class="Nav-items"><a href="">Projects</a></li>
+            <li class="Nav-items"><a href="">Passions</a></li>
+            <li class="Nav-items"><a href="">Contacts</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <section id="studies" class="Studies">
+          <iframe
+            class="spotify"
+            data-testid="embed-iframe"
+            src="https://open.spotify.com/embed/playlist/5BgIAHVkJTFtrLd0W339nG?utm_source=generator"
+            width="100%"
+            height="352"
+            frameborder="0"
+            allowfullscreen=""
+            allow="
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              fullscreen;
+              picture-in-picture;
+            "
+            loading="lazy"
+          ></iframe>
+          <div class="video">
+            <video muted autoplay loop playsinline preload="metadata">
+              <source src="./assets/Video_Gemma.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <div class="testo">TESTO</div>
+        </section>
+        <section id="projects" class="Projects"></section>
+        <section id="passions" class="Passions"></section>
+        <section id="contacts" class="About"></section>
+      </main>
+      <footer></footer>
+    </div>
+  </body>
+</html>
