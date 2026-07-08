@@ -124,8 +124,8 @@ svg {
   display: block;
   fill: currentColor;
 }
+html,
 body {
-  min-height: 100vh;
   hyphens: auto;
   font-family: "Inter", sans-serif;
   font-weight: 400;
@@ -134,7 +134,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f7f2e7;
+  height: 100%;
 }
+
 .Cursor {
   position: fixed;
   width: 12px;
@@ -149,10 +151,6 @@ body {
   z-index: 99999;
 
   transform: translate(-50%, -50%);
-}
-main {
-  width: 100vw;
-  height: 100%;
 }
 
 #Loader {
@@ -172,7 +170,6 @@ main {
 
 #Loader.hidden {
   opacity: 0;
-
   visibility: hidden;
 }
 
@@ -198,13 +195,18 @@ main {
 }
 
 #site-content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   opacity: 0;
-  transform: translateY(30px);
 }
 
 #site-content.visible {
   opacity: 1;
-  transform: translateY(0);
+}
+
+main {
+  flex: 1;
 }
 nav.Nav {
   display: flex;
@@ -287,7 +289,6 @@ ul.Nav-list {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
   background-color: #184eac;
   opacity: 0;
   transform: translateY(-100%);
@@ -299,13 +300,15 @@ ul.Nav-list {
 
 .Second-nav.isOpen {
   width: 100%;
-  height: 100vh;
   background-color: #184eac;
   z-index: 9999;
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
-  overflow: auto;
+}
+.Second-nav.isClosing {
+  transform: translateY(100%);
+  transition: transform 0.8s ease-in-out;
 }
 .Second-nav.isOpen .Nav-list {
   display: flex;
@@ -313,11 +316,11 @@ ul.Nav-list {
   align-items: center;
   justify-content: center;
   color: #fff;
-  height: 100vh;
   gap: 3rem;
   font-size: 5em;
   line-height: 1.038;
   font-weight: 400;
+  height: 100%;
 }
 .Second-nav.isOpen .Nav-list > li {
   position: relative;
@@ -384,13 +387,9 @@ ul.Nav-list {
 
 .video {
   background: salmon;
-
-  grid-column: 3 / 5;
-  grid-row: 1 / 3;
 }
 .video video {
   width: 100%;
-  height: 100%;
   display: block;
   object-fit: cover;
 }
