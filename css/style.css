@@ -143,13 +143,10 @@ body {
   height: 12px;
   border-radius: 50%;
   background: #21ce99;
-
   left: 0;
   top: 0;
-
   pointer-events: none;
   z-index: 99999;
-
   transform: translate(-50%, -50%);
 }
 
@@ -407,5 +404,17 @@ ul.Nav-list {
   .Studies {
     display: flex;
     flex-direction: column;
+  }
+  .Nav-items-second-nav {
+    font-size: 2rem;
+  }
+  .Second-nav.isOpen .Nav-list > li::after {
+    width: 90px;
+    height: 30px;
+  }
+}
+@media (hover: none) and (pointer: coarse) {
+  .Cursor {
+    display: none;
   }
 }
