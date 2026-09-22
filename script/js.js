@@ -1,9 +1,14 @@
 "use strict";
-//loader
+
 const counter = document.getElementById("counter");
 const progressBar = document.getElementById("progressBar");
 const Loader = document.getElementById("Loader");
 const siteContent = document.getElementById("site-content");
+
+const textElement = document.getElementById("text");
+const typingAudio = document.getElementById("typingAudio");
+
+const testo = "Benvenuto nel mio Portfolio.";
 
 if (sessionStorage.getItem("loaded")) {
   Loader.classList.add("hidden");
@@ -13,13 +18,24 @@ if (sessionStorage.getItem("loaded")) {
   sessionStorage.setItem("loaded", "true");
 
   let progress = 0;
+
+  typingAudio.play().catch(() => {});
+
   const loading = setInterval(() => {
     progress++;
+
     counter.textContent = progress;
     progressBar.style.width = progress + "%";
 
+    const lettere = Math.floor((progress / 100) * testo.length);
+
+    textElement.textContent = testo.substring(0, lettere);
+
     if (progress >= 100) {
       clearInterval(loading);
+
+      typingAudio.pause();
+      typingAudio.currentTime = 0;
 
       setTimeout(() => {
         Loader.classList.add("hidden");
@@ -29,7 +45,7 @@ if (sessionStorage.getItem("loaded")) {
     }
   }, 60);
 }
-
+// Avvia l'animazione al caric
 //navbar
 const firstNav = document.querySelector(".Nav-list");
 const secondNav = document.querySelector(".Second-nav");

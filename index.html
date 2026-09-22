@@ -1,89 +1,473 @@
 <!doctype html>
-<html lang="en">
+<html lang="it">
   <head>
     <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Gemma Centrone — Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Great+Vibes&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap"
       rel="stylesheet"
     />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gemma Centrone- Portoflio</title>
     <link rel="stylesheet" href="css/style.css" />
-    <script type="text/javascript" src="script/js.js" defer></script>
   </head>
   <body>
-    <div class="Cursor"></div>
-    <div id="Loader">
-      <div class="Loader-test">Loading <span id="counter">0</span>%</div>
+    <div class="Cursor" aria-hidden="true"></div>
 
+    <div id="Loader">
+      <div class="Loader-count"><span id="counter">0</span>%</div>
       <div class="Loader-progress-wrapper">
         <div class="Loader-progress-bar" id="progressBar"></div>
       </div>
-      <div id="text"></div>
     </div>
+
     <div id="site-content">
       <header>
         <nav class="Nav">
-          <div class="Nav-logo"><span>Gemma /></span></div>
+          <div class="Nav-logo">Gemma /</div>
+          <div class="Nav-center" id="navCenter" aria-hidden="true"></div>
           <ul class="Nav-list">
-            <li class="Nav-items"><a href="#studies">Studies</a></li>
-            <li class="Nav-items"><a href="#projects">Projects</a></li>
-            <li class="Nav-items"><a href="#passions">Passions</a></li>
-            <li class="Nav-items"><a href="#contacts">Contacts</a></li>
+            <li><a href="#studies" data-i18n="nav.percorso">Percorso</a></li>
+            <li><a href="#skills" data-i18n="nav.stack">Stack</a></li>
+            <li><a href="#projects" data-i18n="nav.progetti">Progetti</a></li>
+            <li><a href="#passions" data-i18n="nav.passioni">Passioni</a></li>
+            <li><a href="#contacts" data-i18n="nav.contatti">Contatti</a></li>
           </ul>
-          <div class="Nav-hamburger">
-            <button
-              class="Navigation-trigger"
-              aria-label="navigation trigger"
-            ></button>
+          <div class="Nav-actions">
+            <a
+              class="cv-download"
+              href="/assets/Gemma Centrone_CV.pdf"
+              download="CV_Gemma_Centrone.pdf"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="cv-download-icon" aria-hidden="true">↓</span
+              ><span class="cv-download-label" data-i18n="nav.cv">CV</span>
+            </a>
+            <div class="Nav-hamburger">
+              <button
+                class="Navigation-trigger"
+                aria-label="apri menu"
+                aria-expanded="false"
+              ></button>
+            </div>
           </div>
         </nav>
       </header>
 
-      <nav class="Second-nav">
+      <nav class="Second-nav" aria-hidden="true">
         <ul class="Nav-list">
-          <li class="Nav-items-second-nav"><a href="#studies">Studies</a></li>
-          <li class="Nav-items-second-nav"><a href="#projects">Projects</a></li>
-          <li class="Nav-items-second-nav"><a href="#passions">Passions</a></li>
-          <li class="Nav-items-second-nav"><a href="#contacts">Contacts</a></li>
+          <li>
+            <a href="#studies"
+              ><span data-i18n="nav.percorso">Percorso</span>
+              <span class="arrow">→</span></a
+            >
+          </li>
+          <li>
+            <a href="#skills"
+              ><span data-i18n="nav.stack">Stack</span>
+              <span class="arrow">→</span></a
+            >
+          </li>
+          <li>
+            <a href="#projects"
+              ><span data-i18n="nav.progetti">Progetti</span>
+              <span class="arrow">→</span></a
+            >
+          </li>
+          <li>
+            <a href="#passions"
+              ><span data-i18n="nav.passioni">Passioni</span>
+              <span class="arrow">→</span></a
+            >
+          </li>
+          <li>
+            <a href="#contacts"
+              ><span data-i18n="nav.contatti">Contatti</span>
+              <span class="arrow">→</span></a
+            >
+          </li>
         </ul>
       </nav>
 
-      <main>
-        <section id="studies" class="Studies">
-          <iframe
-            class="spotify"
-            data-testid="embed-iframe"
-            src="https://open.spotify.com/embed/playlist/5BgIAHVkJTFtrLd0W339nG?utm_source=generator"
-            width="100%"
-            height="352"
-            frameborder="0"
-            allowfullscreen=""
-            allow="
-              autoplay;
-              clipboard-write;
-              encrypted-media;
-              fullscreen;
-              picture-in-picture;
-            "
-            loading="lazy"
-          ></iframe>
-          <div class="video">
-            <video muted autoplay loop playsinline preload="metadata">
-              <source src="./assets/Video_Gemma.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
+      <div
+        class="cookie-banner"
+        id="cookieBanner"
+        role="dialog"
+        aria-live="polite"
+        aria-label="Informativa cookie"
+      >
+        <p>
+          Uso solo dati tecnici necessari al funzionamento del sito (nessun
+          tracciamento, nessun cookie di terze parti).
+        </p>
+        <div class="row">
+          <button
+            class="cookie-btn decline"
+            id="cookieDecline"
+            data-i18n="cookie.decline"
+          >
+            Rifiuta
+          </button>
+          <button
+            class="cookie-btn accept"
+            id="cookieAccept"
+            data-i18n="cookie.accept"
+          >
+            Ho capito
+          </button>
+        </div>
+      </div>
 
-          <div class="testo">TESTO</div>
+      <button class="back-to-top" id="backToTop" aria-label="Torna in cima">
+        ↑
+      </button>
+
+      <main>
+        <!-- HERO full-bleed -->
+        <section class="hero wrap">
+          <canvas id="heroCanvas" aria-hidden="true"></canvas>
+          <p class="hero-tag">
+            <span class="Lang-switch" role="group" aria-label="Lingua del sito">
+              <button
+                type="button"
+                class="lang-btn is-active"
+                data-lang="it"
+                aria-pressed="true"
+              >
+                IT
+              </button>
+              <button
+                type="button"
+                class="lang-btn"
+                data-lang="en"
+                aria-pressed="false"
+              >
+                EN
+              </button>
+              <button
+                type="button"
+                class="lang-btn"
+                data-lang="es"
+                aria-pressed="false"
+              >
+                ES
+              </button>
+            </span>
+            <span data-i18n="hero.tag"
+              >frontend developer · 5 anni di esperienza</span
+            >
+          </p>
+          <h1 class="hero-name">
+            <span class="line1"><span class="reveal">Gemma</span></span>
+            <span class="line2"
+              ><span class="line2-mask"
+                ><span class="reveal">Centrone</span></span
+              ></span
+            >
+            <span class="line2-media" aria-hidden="true">
+              <video
+                src="/assets/Video_Gemma.mp4"
+                muted
+                autoplay
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
+            </span>
+          </h1>
+          <p class="hero-role" data-i18n="hero.role">
+            Scrivo frontend da 5 anni — Vue3, React, Webpack — ma quello che mi
+            fa venire voglia di alzarmi al mattino è il lavoro in team e le
+            sfide nuove: il codice è il mezzo, le persone e i problemi da
+            risolvere insieme sono il motivo.
+          </p>
+          <div class="scroll-cue" data-i18n="hero.scroll">Scorri ↓</div>
         </section>
-        <section id="projects" class="Projects"></section>
-        <section id="passions" class="Passions"></section>
-        <section id="contacts" class="About"></section>
+
+        <!-- divider -->
+        <div class="divider divider--lg">
+          <div class="divider-text" data-i18n="divider.percorso">
+            → Percorso
+          </div>
+        </div>
+
+        <section
+          id="studies"
+          class="block wrap"
+          data-accent="indigo"
+          data-label-key="nav.percorso"
+        >
+          <div class="block-head studies-grid">
+            <div class="study-item">
+              <div class="yr">2023 — Oggi</div>
+              <h3>Senior Frontend Developer</h3>
+              <p>
+                Nome Azienda — guida della migrazione Vue2 → Vue3 su un prodotto
+                con oltre 200k utenti attivi mensili.
+              </p>
+            </div>
+            <div class="study-item">
+              <div class="yr">2021 — 2023</div>
+              <h3>Frontend Developer</h3>
+              <p>
+                Nome Azienda — sviluppo di componenti React condivisi tra tre
+                prodotti interni, introduzione dei test automatici.
+              </p>
+            </div>
+            <div class="study-item">
+              <div class="yr">2018 — 2021</div>
+              <h3>Laurea in Informatica</h3>
+              <p>
+                Nome Università — tesi su ottimizzazione delle build front-end,
+                primi progetti pratici con Webpack.
+              </p>
+            </div>
+            <div class="study-item">
+              <div class="yr">Certificazioni</div>
+              <h3>Formazione continua</h3>
+              <p>
+                Corsi avanzati su TypeScript, testing e architetture di design
+                system.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="skills"
+          class="skills-marquee"
+          aria-label="Competenze tecniche"
+          data-accent="indigo"
+          data-label-key="nav.stack"
+        >
+          <div class="marquee-track">
+            <div class="marquee-group">
+              <span>Vue3</span><span class="sep">•</span> <span>React</span
+              ><span class="sep">•</span> <span>Webpack</span
+              ><span class="sep">•</span> <span>TypeScript</span
+              ><span class="sep">•</span> <span>CSS / SCSS</span
+              ><span class="sep">•</span> <span>Testing (Jest / Vitest)</span
+              ><span class="sep">•</span> <span>Git / CI-CD</span
+              ><span class="sep">•</span> <span>Design system</span
+              ><span class="sep">•</span> <span>Vue3</span
+              ><span class="sep">•</span> <span>React</span
+              ><span class="sep">•</span> <span>Webpack</span
+              ><span class="sep">•</span> <span>TypeScript</span
+              ><span class="sep">•</span> <span>CSS / SCSS</span
+              ><span class="sep">•</span> <span>Testing (Jest / Vitest)</span
+              ><span class="sep">•</span> <span>Git / CI-CD</span
+              ><span class="sep">•</span> <span>Design system</span
+              ><span class="sep">•</span> <span>Vue3</span
+              ><span class="sep">•</span> <span>React</span
+              ><span class="sep">•</span> <span>Webpack</span
+              ><span class="sep">•</span> <span>TypeScript</span
+              ><span class="sep">•</span> <span>CSS / SCSS</span
+              ><span class="sep">•</span> <span>Testing (Jest / Vitest)</span
+              ><span class="sep">•</span> <span>Git / CI-CD</span
+              ><span class="sep">•</span> <span>Design system</span
+              ><span class="sep">•</span> <span>Vue3</span
+              ><span class="sep">•</span> <span>React</span
+              ><span class="sep">•</span> <span>Webpack</span
+              ><span class="sep">•</span> <span>TypeScript</span
+              ><span class="sep">•</span> <span>CSS / SCSS</span
+              ><span class="sep">•</span> <span>Testing (Jest / Vitest)</span
+              ><span class="sep">•</span> <span>Git / CI-CD</span
+              ><span class="sep">•</span> <span>Design system</span
+              ><span class="sep">•</span>
+            </div>
+            <div class="marquee-group" aria-hidden="true">
+              <span>Vue3</span><span class="sep">•</span> <span>React</span
+              ><span class="sep">•</span> <span>Webpack</span
+              ><span class="sep">•</span> <span>TypeScript</span
+              ><span class="sep">•</span> <span>CSS / SCSS</span
+              ><span class="sep">•</span> <span>Testing (Jest / Vitest)</span
+              ><span class="sep">•</span> <span>Git / CI-CD</span
+              ><span class="sep">•</span> <span>Design system</span
+              ><span class="sep">•</span> <span>Vue3</span
+              ><span class="sep">•</span> <span>React</span
+              ><span class="sep">•</span> <span>Webpack</span
+              ><span class="sep">•</span> <span>TypeScript</span
+              ><span class="sep">•</span> <span>CSS / SCSS</span
+              ><span class="sep">•</span> <span>Testing (Jest / Vitest)</span
+              ><span class="sep">•</span> <span>Git / CI-CD</span
+              ><span class="sep">•</span> <span>Design system</span
+              ><span class="sep">•</span> <span>Vue3</span
+              ><span class="sep">•</span> <span>React</span
+              ><span class="sep">•</span> <span>Webpack</span
+              ><span class="sep">•</span> <span>TypeScript</span
+              ><span class="sep">•</span> <span>CSS / SCSS</span
+              ><span class="sep">•</span> <span>Testing (Jest / Vitest)</span
+              ><span class="sep">•</span> <span>Git / CI-CD</span
+              ><span class="sep">•</span> <span>Design system</span
+              ><span class="sep">•</span> <span>Vue3</span
+              ><span class="sep">•</span> <span>React</span
+              ><span class="sep">•</span> <span>Webpack</span
+              ><span class="sep">•</span> <span>TypeScript</span
+              ><span class="sep">•</span> <span>CSS / SCSS</span
+              ><span class="sep">•</span> <span>Testing (Jest / Vitest)</span
+              ><span class="sep">•</span> <span>Git / CI-CD</span
+              ><span class="sep">•</span> <span>Design system</span
+              ><span class="sep">•</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- divider grande: i progetti sono il pezzo forte -->
+        <div class="divider divider--dark">
+          <div class="divider-text" data-i18n="nav.progetti">Progetti</div>
+        </div>
+
+        <section
+          id="projects"
+          class="block wrap"
+          data-accent="plum"
+          data-label-key="nav.progetti"
+        >
+          <div class="Projects">
+            <div class="proj-row">
+              <div class="proj-ghost" aria-hidden="true">01</div>
+              <div class="proj-title">Nome Progetto A</div>
+              <div class="proj-body">
+                <p>
+                  Breve descrizione del progetto e del problema concreto che
+                  risolve, in una o due frasi dirette.
+                </p>
+                <div class="proj-footer">
+                  <div class="proj-stack">Vue3 · Webpack · TypeScript</div>
+                  <a class="proj-link" href="#" data-i18n="project.view"
+                    >Vedi il progetto</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="proj-row">
+              <div class="proj-ghost" aria-hidden="true">02</div>
+              <div class="proj-title">Nome Progetto B</div>
+              <div class="proj-body">
+                <p>
+                  Breve descrizione del progetto e del problema concreto che
+                  risolve, in una o due frasi dirette.
+                </p>
+                <div class="proj-footer">
+                  <div class="proj-stack">React · Node · REST</div>
+                  <a class="proj-link" href="#" data-i18n="project.view"
+                    >Vedi il progetto</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="proj-row">
+              <div class="proj-ghost" aria-hidden="true">03</div>
+              <div class="proj-title">Nome Progetto C</div>
+              <div class="proj-body">
+                <p>
+                  Breve descrizione del progetto e del problema concreto che
+                  risolve, in una o due frasi dirette.
+                </p>
+                <div class="proj-footer">
+                  <div class="proj-stack">Vue3 · React · Design system</div>
+                  <a class="proj-link" href="#" data-i18n="project.view"
+                    >Vedi il progetto</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- divider piccola, compatta -->
+        <div class="divider divider--sm">
+          <div class="divider-text" data-i18n="nav.passioni">Passioni</div>
+        </div>
+
+        <section
+          id="passions"
+          class="block wrap"
+          data-accent="green"
+          data-label-key="nav.passioni"
+        >
+          <div class="Passions">
+            <div class="chip">
+              <span class="dot"></span>Musica — playlist infinite
+            </div>
+            <div class="chip">
+              <span class="dot"></span>Lettura — sci-fi &amp; design
+            </div>
+            <div class="chip">
+              <span class="dot"></span>Viaggi — città nuove
+            </div>
+            <div class="chip">
+              <span class="dot"></span>Fotografia analogica
+            </div>
+          </div>
+        </section>
+
+        <!-- divider media -->
+        <div class="divider divider--md">
+          <div class="divider-text" data-i18n="nav.contatti">Contatti</div>
+        </div>
+
+        <section
+          id="contacts"
+          class="contact-scene"
+          data-accent="coral"
+          data-label-key="nav.contatti"
+        >
+          <div class="wrap contact-grid">
+            <h2 data-i18n="contact.heading">
+              Parliamo del tuo prossimo progetto.
+            </h2>
+            <div class="contact-side">
+              <div class="contact-cta">
+                <a class="cta-btn cta-btn--email" href="mailto:gemma97@live.it">
+                  <span class="cta-icon" aria-hidden="true">✉</span>
+                  <span data-i18n="contact.email_btn">Scrivimi via email</span>
+                </a>
+                <a
+                  class="cta-btn cta-btn--whatsapp"
+                  href="https://wa.me/393803812167"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <span class="cta-icon" aria-hidden="true">💬</span>
+                  <span data-i18n="contact.whatsapp_btn"
+                    >Scrivimi su WhatsApp</span
+                  >
+                </a>
+              </div>
+              <div class="contact-links">
+                <a href="mailto:gemma97@live.it">gemma97@live.it</a>
+                <a href="#">linkedin.com/in/gemmacentrone</a>
+                <a href="#">github.com/gemmacentrone</a>
+              </div>
+              <div class="playlist-link">
+                <a
+                  href="https://open.spotify.com/playlist/5BgIAHVkJTFtrLd0W339nG"
+                  target="_blank"
+                  rel="noopener"
+                  data-i18n="contact.playlist"
+                  >Ascolta la mia playlist mentre guardi i progetti ↗</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
-      <footer></footer>
+
+      <footer class="wrap">
+        <span>© 2026 Gemma Centrone</span>
+        <span class="perf-badge" id="perfBadge"></span>
+        <span data-i18n="footer.credit"
+          >Design &amp; sviluppo: questo sito</span
+        >
+      </footer>
     </div>
+
+    <script src="js/script.js" defer></script>
   </body>
 </html>
